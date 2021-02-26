@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Security</title>
+</head>
+<body>
+<h2>Admin Login</h2>
+
+<form action="#" th:action="@{/login}" method="post" th:object="${user}">
+<!--    <input class="form-control" type="hidden" th:field="*{id}" /><br/>-->
+    <label>Username: </label>
+    <input class="form-control" type="text" th:field="*{username}" /><br/>
+    <label>Last Name: </label>
+    <input class="form-control" type="text" th:field="*{password}" /><br/>
+    <button class="btn btn-primary" type="submit">Login</button>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <H2>EMPLOYEE</H2>
+    <div th:object="${employee}">
+        <p th:text="*{firstName}" ></p>
+        <p th:text="*{lastName}" ></p>
+        <p th:text="*{phoneNumber}" ></p>
+        <p th:text="*{email}"></p>
+    </div>
+
+    <div>
+        <a th:href="@{/employees/attendance}" >Add Attendance</a>
+    </div>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Weekday</th>
+            <th>Attendance Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th>Week No.</th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+        </tr>
+        <tr th:each="attendance : ${employeeAttendance}">
+            <td th:text="${attendance.weekNumber}"></td>
+            <td th:text="${attendance.monday}"></td>
+            <td th:text="${attendance.tuesday}"></td>
+            <td th:text="${attendance.wednesday}"></td>
+            <td th:text="${attendance.thursday}"></td>
+            <td th:text="${attendance.friday}"></td>
+        </tr>
+        </tbody>
+    </table>
+</body>
+</html>

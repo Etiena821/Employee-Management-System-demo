@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="#" th:action="@{/employees/attendance}" method="post" th:object="${attendance}">
+    <input class="form-control" type="hidden" th:field="*{id}" /><br/>
+    <label>Week No: </label>
+    <input class="form-control" type="text" th:field="*{weekNumber}" /><br/>
+    <label>Monday: </label>
+    <input class="form-control" type="text" th:field="*{monday}" /><br/>
+    <label>Tuesday: </label>
+    <input class="form-control" type="text" th:field="*{tuesday}" /><br/>
+    <label>Wednesday: </label>
+    <input class="form-control" type="text" th:field="*{wednesday}" /><br/>
+    <label class="fo">Thursday: </label>
+    <input class="form-control" type="text" th:field="*{thursday}" /><br/>
+    <label class="fo">Friday: </label>
+    <input class="form-control" type="text" th:field="*{friday}" /><br/>
+    <button class="btn btn-primary" type="submit">Add</button>
+</form>
+</body>
+</html>
